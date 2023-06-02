@@ -35,5 +35,21 @@
         {{ end }}
     </div>
     {{ end }}
+    {{ if .Params.artists }}
+    <div class="blog-tags">
+        {{ i18n "artists" | humanize }}:
+        {{ range .Params.artists }}
+        <a href="{{ $.Site.LanguagePrefix | absURL }}/artists/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+        {{ end }}
+    </div>
+    {{ end }}
+    {{ if .Params.albums }}
+    <div class="blog-tags">
+        {{ i18n "albums" | humanize }}:
+        {{ range .Params.albums }}
+        <a href="{{ $.Site.LanguagePrefix | absURL }}/albums/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+        {{ end }}
+    </div>
+    {{ end }}
 
 </article>
